@@ -1,0 +1,32 @@
+<div class="col-md-6 offset-md-3 ">
+    <h3>Update Grocery</h3>
+    
+    <form (ngSubmit)="onSubmit()" class="myForm">
+        
+        <div class="form-group">
+          <label for="grocery_name" >Grocery Name:</label>
+          <input type="text" class="form-control" name="groceryName" id="grocery_name" [(ngModel)]="groceries.grocery_name">
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="grocery_cost" >Cost</label>
+          <input type="text" class="form-control" name="groceryCost" id="grocery_cost" [(ngModel)]="groceries.cost_per_item">
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="quantity" >Quantity:</label>
+          <input type="number" class="form-control" name="groceryQty" id="quantity" [(ngModel)]="groceries.quantity">
+        </div>
+        <br>
+
+        <div class="form-group">
+          <label for="dropdown">Source:</label><br>
+          <select id="dropdown" class="form-control" [(ngModel)]="groceries.source" (change)="selectOption(dd.value)"  name="selectedOption" #dd>
+            <option *ngFor="let option of options" [value]="option.name" >{{ option.name }}</option>
+          </select>
+      </div>
+      <br>
+            <button class="btn btn-success" type="submit">Submit</button>
+    </form>
+    
+    </div>

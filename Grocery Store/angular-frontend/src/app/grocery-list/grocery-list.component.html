@@ -1,0 +1,31 @@
+<h2>Grocery List</h2>
+<table class="table table-striped" >
+    <thead>
+        <tr>
+            <th>Grocery Name</th>
+            <th>Cost Per Item</th>
+            <th>Quantity</th>
+            <th>Source</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let grocery of groceries">
+            <td>{{grocery.grocery_name}}</td>
+            <td>{{grocery.cost_per_item}}</td>
+            <td>{{grocery.quantity}}</td>
+            <td>{{grocery.source}}</td>
+            <td>
+                <button (click)="updateGrocery(grocery.grocery_id)" class="btn btn-info" style="background-color:rgba(70, 195, 70, 0.798);">Update</button>
+                <button (click)="deleteGrocery(grocery.grocery_id)" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+                <button (click)="groceryDetails(grocery.grocery_id)" class="btn btn-info" style="margin-left: 10px;" style="background-color:#FFA351">Details</button>
+
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2 style="border: 2px solid black; width:fit-content;padding: 10px;box-shadow: 1px 4px 10px 1px #aaa ;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+Total Amount: {{ totalCost }}
+</h2>
+
+

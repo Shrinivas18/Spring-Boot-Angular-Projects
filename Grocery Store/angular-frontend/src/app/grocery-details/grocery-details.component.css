@@ -1,0 +1,10 @@
+.container{
+    margin-top: 40px;
+    border:2px solid black;
+    box-shadow:10px 10px;
+    margin-left: 10px;
+    width: 40%;
+    padding: 10px 10px 10px 10px;
+    
+       
+}
